@@ -1,0 +1,40 @@
+import java.util.*;
+public class PrimeNumbers {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter a number for the start of the interval");
+	    int from=scanner.nextInt();
+		System.out.println("Enter a number for the end of the interval");
+        int to=scanner.nextInt();
+        scanner.close();
+        if(to>from){
+        Exception(from, to);
+        }
+        else{
+        	System.out.println("Wrong interval");
+        }
+	}
+	
+	public static void Exception(int from, int to)
+	{
+		int dur=(to-from)+1;
+		for(int i = 0;i<dur;i++){
+			int prime = from+i;
+			if(isPrime(prime)==true)
+			{
+				System.out.println(prime+" Is The Prime Number In The Interval");
+			}
+		}
+	}
+	
+	public static boolean isPrime(int n) {
+		for (int i = 2; i < n; i++) {
+			if (n % i == 0)
+				return false;
+		}
+		return true;
+	}
+}
